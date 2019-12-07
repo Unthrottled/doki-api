@@ -9,10 +9,8 @@ const application = express();
 application.use(bodyParser.json({strict: false}));
 application.use(bodyParser.urlencoded({extended: true}));
 application.post('/slack/error', (request, response) => {
-  const errorUrl = process.env.SLACK_URL;
-  console.log(errorUrl);
-  axios.post(errorUrl, {
-    text: request.body,
+  axios.post(process.env.SLACK_URL, {
+    text: request.body.text || 'n/a',
   })
     .then(() => response.status(204).send())
     .catch(() => response.status(204).send());
