@@ -9,12 +9,13 @@ provider:
   name: aws
   runtime: nodejs12.x
 
-  custom:
-    customDomain:
-      domainName: doki.api.acari.io
-      basePath: ''
-      stage: prd
-      createRoute53Record: true
+custom:
+  customDomain:
+    domainName: doki.api.acari.io
+    certificateName: '*.api.acari.io'
+    basePath: ''
+    stage: prd
+    createRoute53Record: true
 
 
 functions:
