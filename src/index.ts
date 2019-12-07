@@ -5,10 +5,10 @@ const application = express();
 
 application.use(bodyParser.json({strict: false}));
 application.use(bodyParser.urlencoded({extended: true}));
-application.post('/', commandHandler);
+// application.post('/', commandHandler);
 
-application.use((request, response) => {
-  response.status(418).send(teapot);
-});
+// application.use((request, response) => {
+//   response.status(418).send(teapot);
+// });
 
 module.exports.handler = serverless(application);
