@@ -8,13 +8,15 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/express": "^4.17.2",
+    "axios": "^0.19.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.0",
     "serverless-http": "^2.0.2"
   },
   "scripts": {
-    "start": "DEV=true sls offline start",
+    "start": "SLACK_URL=https://exyos.acari.io/ sls offline start",
     "start:not:dev": "sls offline start",
     "test": "jest --coverage",
     "lint": "tslint src/**/*.ts"
